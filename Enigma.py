@@ -43,6 +43,14 @@ def encrypt_message(Message_In):
     Arr2.clear()
     
 
+    fjkasdh aggd
+    sfd
+    ghsdhg
+    sghsdf
+    hgsdg
+    sdfghsd
+    
+
 
 while True:
     print("Rules: only use lowercase  letters, NO capital letter!")
