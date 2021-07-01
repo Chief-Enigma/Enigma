@@ -13,7 +13,6 @@ Message_Encrypted = ""
 
 
 
-
 def encrypt_message(Message_In):
     
     Message_In_arr = list(Message_In)
@@ -25,11 +24,11 @@ def encrypt_message(Message_In):
             if Message_In_arr[x] == lookingfor:
                 Arr1.append(i)
 
-#numbers in arr
+
     for y in range(len(Message_In)):
         Arr1[y] = (Arr1[y] + key[y%len(key)])
 
-#build encrypted message
+
     for y in range(len(Arr1)):
         Arr2.append(Characters[Arr1[y]%len(Characters)])
 
