@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 class Program
 {
@@ -50,6 +51,7 @@ class Program
         string Message_Encrypted = "";
 
         char[] Message_In_arr = Message_In.ToCharArray();
+        
 
         for (int x = 0; x < Message_In.Length; x++)
         {
@@ -91,9 +93,9 @@ class Program
                 {
                     break;
                 }
-                System.Threading.Thread.Sleep(25);
-                Console.Write("\x1B[1D"); // Move the cursor one unit to the left
-                Console.Write("\x1B[1P"); // Delete the character
+                System.Threading.Thread.Sleep((2000 / (Message_Encrypted.Length)) / characters.Length);
+                Console.Write("\b"); // Move the cursor one unit to the left
+                //Console.Write("\x1B[1P"); // Delete the character
                 
             }
         
@@ -158,9 +160,9 @@ class Program
                 {
                     break;
                 }
-                System.Threading.Thread.Sleep(50);
-                Console.Write("\x1B[1D"); // Move the cursor one unit to the left
-                Console.Write("\x1B[1P"); // Delete the character
+                System.Threading.Thread.Sleep((2000 / (Message_Encrypted.Length))/characters.Length);
+                Console.Write("\b"); // Move the cursor one unit to the left
+                //Console.Write("\x1B[1P"); // Delete the character
 
             }
 
@@ -171,19 +173,31 @@ class Program
     static void print_label()
     {
 
-        Console.Write("        .-\"\"-."); Console.WriteLine("                                           _   _                            __ _");
-        Console.Write("       / .--. \\ "); Console.WriteLine("         ___ _ __   ___ _ __ _   _ _ __ | |_(_) ___  _ __      ___  ___  / _| |___      ____ _ _ __ ___ ");
-        Console.Write("      / /    \\ \\ "); Console.WriteLine("       / _ \\ '_ \\ / __| '__| | | | '_ \\| __| |/ _ \\| '_ \\    / __|/ _ \\| |_| __\\ \\ /\\ / / _` | '__/ _ \\");
-        Console.Write("      | |    | |"); Console.WriteLine("       |  __/ | | | (__| |  | |_| | |_) | |_| | (_) | | | |   \\__ \\ (_) |  _| |_ \\ V  V / (_| | | |  __/");
-        Console.Write("      | |.-\"\"-.|"); Console.WriteLine("        \\___|_| |_|\\___|_|   \\__, | .__/ \\__|_|\\___/|_| |_|   |___/\\___/|_|  \\__| \\_/\\_/ \\__,_|_|  \\___|");
-        Console.Write("     ///`.::::.`\\"); Console.WriteLine("                            |___/|_|");
+        Console.WriteLine("        .-\"\"-.                                           _   _                            __ _");
+        Console.WriteLine("       / .--. \\          ___ _ __   ___ _ __ _   _ _ __ | |_(_) ___  _ __      ___  ___  / _| |___      ____ _ _ __ ___ ");
+        Console.WriteLine("      / /    \\ \\        / _ \\ '_ \\ / __| '__| | | | '_ \\| __| |/ _ \\| '_ \\    / __|/ _ \\| |_| __\\ \\ /\\ / / _` | '__/ _ \\");
+        Console.WriteLine("      | |    | |       |  __/ | | | (__| |  | |_| | |_) | |_| | (_) | | | |   \\__ \\ (_) |  _| |_ \\ V  V / (_| | | |  __/");
+        Console.WriteLine("      | |.-\"\"-.|        \\___|_| |_|\\___|_|   \\__, | .__/ \\__|_|\\___/|_| |_|   |___/\\___/|_|  \\__| \\_/\\_/ \\__,_|_|  \\___|");
+        Console.WriteLine("     ///`.::::.`\\                            |___/|_|");
         Console.WriteLine("    ||| ::/  \\:: ;"); 
         Console.WriteLine("    ||; ::\\__/:: ;"); 
         Console.WriteLine("     \\\\\\ '::::' /"); 
         Console.WriteLine("      `=':-..-'`");
         Console.WriteLine();
     }
+
+
+    static void cmd2()
+    {
+        Process.Start("cmd", "start chrome");
+
+    }
+
+
 }
+
+
+
 
 
 /*
