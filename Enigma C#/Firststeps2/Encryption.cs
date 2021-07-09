@@ -8,7 +8,7 @@ namespace EncryptionSoftware
     public class Encryption
     {
 
-        static char[] characters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '?', '!', '-', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '\'' };
+        public static char[] characters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '?', '!', '-', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '\'' };
         static int[] key = { 1, 17, 63, 8, 2, 19, 22, 1, 45, 2, 4, 6, 2, 0, 17, 5, 1, 48 };
 
         public static string encrypt_message(string Message_In)

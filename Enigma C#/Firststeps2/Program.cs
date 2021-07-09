@@ -5,13 +5,10 @@ using EncryptionSoftware;
 
 class Program
 {
-    static char[] characters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '?', '!', '-', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '\'' };
-    static int[] key = { 1, 17, 63, 8, 2, 19, 22, 1, 45, 2, 4, 6, 2, 0, 17, 5, 1, 48 };
-
-
-
     static void Main()
     {
+        Console.Title = "Encryption Software";
+        char[] characters = EncryptionSoftware.Encryption.characters;
 
         while (true)
         {
@@ -23,17 +20,55 @@ class Program
 
             if (choice == "1")
             {
+                string Message_Encrypted = "";
                 Console.WriteLine("Rules: only use lowercase  letters, NO capital letter!");
                 Console.Write("Input Message: ");
-                Console.WriteLine("Encrypted message: " + Encryption.encrypt_message(Console.ReadLine()));
+                //Console.WriteLine("Encrypted message: " + Encryption.encrypt_message(Console.ReadLine()));
+                Message_Encrypted = Encryption.encrypt_message(Console.ReadLine());
+                Console.Write("Message Encrypted: ");
+                List<char> Arr2 = new List<char>(Message_Encrypted.ToCharArray());
+                //Arr2 = Message_Encrypted.ToCharArray();
+                for (int y = 0; y < Arr2.Count; y++)
+                {
+                    for (int z = 0; z < characters.Length; z++)
+                    {
+                        Console.Write(characters[z]);
+                        if (characters[z] == Arr2[y])
+                        {
+                            break;
+                        }
+                        System.Threading.Thread.Sleep((2000 / (Message_Encrypted.Length)) / characters.Length);
+                        Console.Write("\b"); // Move the cursor one unit to the left
+                    }
+
+                }
+                Console.WriteLine();
             }
             else if (choice == "2")
             {
+                string Message_Decrypted = "";
                 Console.WriteLine("Rules: only use lowercase  letters, NO capital letter!");
                 Console.Write("Input encrypted Message: ");
+                //Console.WriteLine("Message Decrypted: " + Encryption.decrypt_message(Console.ReadLine()));
+                Message_Decrypted = Encryption.decrypt_message(Console.ReadLine());
+                Console.Write("Message Decrypted: ");
+                List<char> Arr2 = new List<char>(Message_Decrypted.ToCharArray());
+                //Arr2 = Message_Encrypted.ToCharArray();
+                for (int y = 0; y < Arr2.Count; y++)
+                {
+                    for (int z = 0; z < characters.Length; z++)
+                    {
+                        Console.Write(characters[z]);
+                        if (characters[z] == Arr2[y])
+                        {
+                            break;
+                        }
+                        System.Threading.Thread.Sleep((2000 / (Message_Decrypted.Length)) / characters.Length);
+                        Console.Write("\b"); // Move the cursor one unit to the left
+                    }
 
-                Console.WriteLine("Decrypted message: " + Encryption.decrypt_message(Console.ReadLine()));
-                
+                }
+                Console.WriteLine();
             }
             else
             {
@@ -43,12 +78,10 @@ class Program
             Console.ReadKey();
             Console.Clear();
         }
-
     }
 
     static void print_label()
     {
-
         Console.WriteLine("        .-\"\"-.                                       _   _                            __ _");
         Console.WriteLine("       / .--. \\      ___ _ __   ___ _ __ _   _ _ __ | |_(_) ___  _ __      ___  ___  / _| |___      ____ _ _ __ ___ ");
         Console.WriteLine("      / /    \\ \\    / _ \\ '_ \\ / __| '__| | | | '_ \\| __| |/ _ \\| '_ \\    / __|/ _ \\| |_| __\\ \\ /\\ / / _` | '__/ _ \\");
@@ -59,17 +92,8 @@ class Program
         Console.WriteLine("    ||; ::\\__/:: ;"); 
         Console.WriteLine("     \\\\\\ '::::' /"); 
         Console.WriteLine("      `=':-..-'`");
-        Console.WriteLine("\n\n");
+        Console.WriteLine("This is a lock and NOTHING ELSE!!!\n\n");
     }
-
-
-    static void cmd2()
-    {
-        Process.Start("cmd", "start chrome");
-
-    }
-
-
 }
 
 
@@ -77,6 +101,9 @@ class Program
 
 
 /*
+https://www.codegrepper.com/code-examples/python/python+get+linux+command+output
+
+https://www.youtube.com/watch?v=4uHTSknGJaY&t=9s
 
 
                                   _   _             
