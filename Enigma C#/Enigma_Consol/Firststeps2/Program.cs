@@ -9,6 +9,7 @@ class Program
     {
         Console.Title = "Encryption Software";
         char[] characters = EncryptionSoftware.Encryption.characters;
+        Console.WriteLine(characters);
 
         while (true)
         {
