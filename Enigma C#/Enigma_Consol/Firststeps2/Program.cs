@@ -102,9 +102,6 @@ class Program
 
 
 /*
-https://www.codegrepper.com/code-examples/python/python+get+linux+command+output
-
-https://www.youtube.com/watch?v=4uHTSknGJaY&t=9s
 
 
                                   _   _             
